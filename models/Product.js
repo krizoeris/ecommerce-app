@@ -7,6 +7,10 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
+    description: {
+        type: String,
+        required: true
+    },
     images: {
         type: Array, // Products should have a slideshow that's why it is array
         default: []
