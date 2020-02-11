@@ -3,7 +3,7 @@ const mongoose = require('mongoose'); // import the moongo from packages
 const Schema = mongoose.Schema; // Set the schema constructor
 
 const ShippingSchema = new Schema({
-    user: {
+    user_id: {
         type: Schema.Types.ObjectId, // Connects to User Model
         ref: 'User'
     },
