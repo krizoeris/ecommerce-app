@@ -4,7 +4,7 @@ const ShippingModel = require('../models/Shipping'); // import the Shipping mode
 
 router.post('/create', (req, res) =>{
     const formdata = {
-        'user_id': req.body.user_id,
+        'user': req.body.user,
         'first_name': req.body.first_name,
         'last_name': req.body.last_name,
         'address': req.body.address,
@@ -22,6 +22,7 @@ router.post('/create', (req, res) =>{
 
 router.get('/all', (req, res) =>{
     ShippingModel.find()
+    .populate('user')
     .then((results)=>{
         res.json(results);
     });

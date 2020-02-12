@@ -4,8 +4,8 @@ const OrderModel = require('../models/Order'); // import the Order model
 
 router.post('/create', (req, res) =>{
     const formdata = {
-        'shipping_id': req.body.shipping_id,
-        'cart_id': req.body.cart_id,
+        'shipping': req.body.shipping,
+        'cart': req.body.cart,
     }
 
     const theOrder = new OrderModel(formdata);
@@ -16,6 +16,8 @@ router.post('/create', (req, res) =>{
 
 router.get('/all', (req, res) =>{
     OrderModel.find()
+    .populate('shipping')
+    .populate('cart')
     .then((results)=>{
         res.json(results);
     });

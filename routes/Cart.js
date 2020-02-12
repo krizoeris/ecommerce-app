@@ -4,8 +4,8 @@ const CartModel = require('../models/Cart'); // import the Cart model
 
 router.post('/create', (req, res) =>{
     const formdata = {
-        'user_id': req.body.user_id,
-        'product_id': req.body.product_id,
+        'user': req.body.user,
+        'product': req.body.product,
         'status': req.body.status,
         'quantity': req.body.quantity
     }
@@ -18,6 +18,8 @@ router.post('/create', (req, res) =>{
 
 router.get('/all', (req, res) =>{
     CartModel.find()
+    .populate('user')
+    .populate('product')
     .then((results)=>{
         res.json(results);
     });

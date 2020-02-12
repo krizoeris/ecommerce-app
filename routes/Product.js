@@ -8,7 +8,7 @@ router.post('/create', (req, res) =>{
         'description': req.body.description,
         'stock': req.body.stock,
         'price': req.body.price,
-        'category_id': req.body.category_id,
+        'category': req.body.category,
         'brand': req.body.brand,
         'model': req.body.model
     }
@@ -21,6 +21,7 @@ router.post('/create', (req, res) =>{
 
 router.get('/all', (req, res) =>{
     ProductModel.find()
+    .populate('category')
     .then((results)=>{
         res.json(results);
     });

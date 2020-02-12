@@ -23,9 +23,9 @@ const ProductSchema = new Schema({
         type: Number,
         required: true
     },
-    category_id: {
+    category: {
         type: Schema.Types.ObjectId, // Connects to category
-        ref: 'Category'
+        ref: 'category'
     },
     brand:  {
         type: String,

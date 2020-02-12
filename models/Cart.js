@@ -3,13 +3,13 @@ const mongoose = require('mongoose'); // import the moongo from packages
 const Schema = mongoose.Schema; // Set the schema constructor
 
 const CartSchema = new Schema({
-    user_id: {
+    user: {
         type: Schema.Types.ObjectId, // Connects to User Model
-        ref: 'User'
+        ref: 'user'
     },
-    product_id: {
+    product: {
         type: Schema.Types.ObjectId, // Connects to category
-        ref: 'Product'
+        ref: 'product'
     },
     status:  {
         type: String, //Checks if already paid or pending

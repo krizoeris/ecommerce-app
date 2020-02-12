@@ -3,13 +3,13 @@ const mongoose = require('mongoose'); // import the moongo from packages
 const Schema = mongoose.Schema; // Set the schema constructor
 
 const OrderSchema = new Schema({
-    shipping_id: {
+    shipping: {
         type: Schema.Types.ObjectId, // Connects to Shipping Model
-        ref: 'Shipping'
+        ref: 'shipping'
     },
-    cart_id: {
+    cart: {
         type: Schema.Types.ObjectId, // Connects to Cart Model
-        ref: 'Cart'
+        ref: 'cart'
     },
     date: {
         type: Date,
