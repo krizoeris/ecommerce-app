@@ -5,7 +5,8 @@ const cors = require('cors');
 
 // import the routes
 const UserRoutes = require('./routes/User'); 
-const CategoryRoutes = require('./routes/Category'); 
+const BrandRoutes = require('./routes/Brand');
+const ModelRoutes = require('./routes/Model'); 
 const ProductRoutes = require('./routes/Product'); 
 const CartRoutes = require('./routes/Cart'); 
 const ShippingRoutes = require('./routes/Shipping'); 
@@ -29,7 +30,8 @@ mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
 
 // using Routes
 app.use('/user', UserRoutes);
-app.use('/category', CategoryRoutes);
+app.use('/brand', BrandRoutes);
+app.use('/model', ModelRoutes);
 app.use('/product', ProductRoutes);
 app.use('/cart', CartRoutes);
 app.use('/shipping', ShippingRoutes);

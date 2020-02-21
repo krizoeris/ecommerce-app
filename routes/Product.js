@@ -5,12 +5,13 @@ const ProductModel = require('../models/Product'); // import the Product model
 router.post('/create', (req, res) =>{
     const formdata = {
         'name': req.body.name,
-        'description': req.body.description,
+        'details': req.body.details,
+        'images': req.body.images,
         'stock': req.body.stock,
         'price': req.body.price,
-        'category': req.body.category,
         'brand': req.body.brand,
-        'model': req.body.model
+        'model': req.body.model,
+        'specs': req.body.specs
     }
 
     const theProduct = new ProductModel(formdata);
