@@ -24,11 +24,11 @@ const ProductSchema = new Schema({
         required: true
     },
     brand:  {
-        type: Schema.Types.ObjectId, // Connects to brand
+        type: String,
         required: true
     },
     model:  {
-        type: Schema.Types.ObjectId, // Connects to model
+        type: String,
         required: true
     },
     specs:  {
