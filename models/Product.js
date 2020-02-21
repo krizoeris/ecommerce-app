@@ -7,7 +7,7 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
-    description: {
+    details: {
         type: String,
         required: true
     },
@@ -23,17 +23,17 @@ const ProductSchema = new Schema({
         type: Number,
         required: true
     },
-    category: {
-        type: Schema.Types.ObjectId, // Connects to category
-        ref: 'category'
-    },
     brand:  {
-        type: String,
+        type: Schema.Types.ObjectId, // Connects to brand
         required: true
     },
     model:  {
-        type: String,
+        type: Schema.Types.ObjectId, // Connects to model
         required: true
+    },
+    specs:  {
+        type: Array,
+        default: []
     },
     date: {
         type: Date,

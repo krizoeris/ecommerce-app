@@ -1,6 +1,7 @@
 const express = require('express'); // import express from packages
 const bodyParser = require('body-parser'); // import body parser
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // import the routes
 const UserRoutes = require('./routes/User'); 
@@ -13,6 +14,7 @@ const OrderRoutes = require('./routes/Order');
 // call all express as a function
 const app = express(); 
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false})); // Parse from the header
 app.use(bodyParser.json()); // Parse the json
 
