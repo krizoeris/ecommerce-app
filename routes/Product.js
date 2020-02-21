@@ -28,4 +28,12 @@ router.get('/all', (req, res) =>{
     });
 });
 
+router.get('/:id', (req, res) =>{
+    ProductModel.findById(req.params.id)
+    .populate('category')
+    .then((results)=>{
+        res.json(results);
+    });
+});
+
 module.exports = router;
